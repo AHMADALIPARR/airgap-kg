@@ -8,7 +8,7 @@ See LICENSE file for full terms.
 
 # AIRGAP-KG
 
-![AIRGAP-KG Logo](docs/logo-small.png)
+![AIRGAP-KG Logo](docs/logo.svg)
 
 **Offline, Deterministic Evidence-Centric Knowledge Graph Kernel**  
 *Reference implementation with machine-checked formal models*

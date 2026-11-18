@@ -1,0 +1,19 @@
+# Copyright (C) 2026 Ahmad Ali Parr, Jessica Westerhoff
+# Research owner: Bel esprit D'accord Trust
+# Lab: SnapKitty Research Lab
+# Licensed under the GNU Affero General Public License v3.0 or later.
+# See LICENSE file for details.
+
+@prefix ex: <urn:airgap:kg:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:Observation a owl:Class .
+ex:Asset a owl:Class .
+ex:Source a owl:Class .
+ex:asset a owl:ObjectProperty ; rdfs:domain ex:Observation ; rdfs:range ex:Asset .
+ex:source a owl:ObjectProperty ; rdfs:domain ex:Observation ; rdfs:range ex:Source .
+ex:property a owl:DatatypeProperty .
+ex:value a owl:DatatypeProperty .
+ex:classification a owl:ObjectProperty .
+ex:observedAt a owl:DatatypeProperty .

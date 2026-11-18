@@ -1,0 +1,17 @@
+# Copyright (C) 2026 Ahmad Ali Parr, Jessica Westerhoff
+# Research owner: Bel esprit D'accord Trust
+# Lab: SnapKitty Research Lab
+# Licensed under the GNU Affero General Public License v3.0 or later.
+# See LICENSE file for details.
+
+@prefix ex: <urn:airgap:kg:> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+ex:ObservationShape a sh:NodeShape ;
+ sh:targetClass ex:Observation ;
+ sh:property [ sh:path ex:asset ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+ sh:property [ sh:path ex:source ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+ sh:property [ sh:path ex:property ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path ex:value ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path ex:classification ; sh:minCount 1 ; sh:maxCount 1 ; sh:in (ex:PUBLIC ex:RESTRICTED ex:SECRET ex:TOP_SECRET) ] ;
+ sh:property [ sh:path ex:observedAt ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .

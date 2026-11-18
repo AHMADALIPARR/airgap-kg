@@ -1,0 +1,4 @@
+o001	generator_a	status	operational	maintenance	PUBLIC	2026-11-18T10:00:00Z
+o002	generator_a	status	maintenance_required	technician	RESTRICTED	2026-11-18T10:01:00Z
+o003	generator_b	status	operational	maintenance	PUBLIC	2026-11-18T10:02:00Z
+o004	generator_a	location	warehouse_2	inventory	PUBLIC	2026-11-18T10:03:00Z

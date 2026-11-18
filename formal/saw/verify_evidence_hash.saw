@@ -1,0 +1,40 @@
+// Copyright (C) 2026 Ahmad Ali Parr, Jessica Westerhoff
+// Research owner: Bel esprit D'accord Trust
+// Lab: SnapKitty Research Lab
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Affero General Public License as published
+// by the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Affero General Public License for more details.
+//
+// You should have received a copy of the GNU Affero General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+// SAW script for next-step #5 formal verification of the Cryptol hash/MAC.
+// Loads the Cryptol module and proves the determinism property.
+// Run with: saw verify_evidence_hash.saw
+// (requires SAW and Cryptol in PATH)
+
+import "Cryptol";
+
+let cry_file = "formal/cryptol/EvidenceHash.cry";
+
+// Load the Cryptol module
+let m = cryptol_load cry_file;
+
+// Extract the macDeterministic theorem and prove it
+let thm = cryptol_extract m "macDeterministic";
+
+// Prove with the default solver (Z3 or whatever is configured)
+prove_print thm;
+
+// Optional: also extract and check macKeyDiff on a bounded domain
+// let thm2 = cryptol_extract m "macKeyDiff";
+// prove_print thm2;
+
+print "SAW verification of EvidenceHash.cry completed.";
